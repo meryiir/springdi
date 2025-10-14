@@ -25,3 +25,4 @@ public class MetierImplTest {
         Assert.assertEquals(20.0, result, 0.001);  // 10.0 * 2 = 20.0
     }
 }
+

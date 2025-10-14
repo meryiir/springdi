@@ -7,12 +7,16 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration  // Indique que cette classe contient des configurations Spring
-@ComponentScan(basePackages = {"com.example.springdi.dao", "com.example.springdi.metier"})  // Indique à Spring de scanner ces packages pour trouver des beans
+@ComponentScan(basePackages = {"com.example.springdi.dao", "com.example.springdi.metier", "com.example.springdi.config"})  // Scanner aussi le package config
 public class Presentation2 {
     public static void main(String[] args) {
-        // Création du contexte Spring avec activation du profil "dev"
+        // Création du contexte Spring
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
-        context.getEnvironment().setActiveProfiles("dev");  // Active le profil "dev"
+        // Activez un profil au besoin (dev/prod/file/api). Laisser vide pour la sélection par propriété.
+        // context.getEnvironment().setActiveProfiles("dev");
+        // context.getEnvironment().setActiveProfiles("prod");
+        // context.getEnvironment().setActiveProfiles("file");
+        // context.getEnvironment().setActiveProfiles("api");
         context.register(Presentation2.class);
         context.refresh();
         

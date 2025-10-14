@@ -16,3 +16,4 @@ public class PresentationXML {
         System.out.println("Résultat (XML) = " + metier.calcul());
     }
 }
+
